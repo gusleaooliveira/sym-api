@@ -7,9 +7,20 @@ import { RevenuesModule } from './revenues/revenues.module';
 import { TasksModule } from './tasks/tasks.module';
 import { AlertsModule } from './alerts/alerts.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
-  imports: [UsersModule, ExpensesModule, RevenuesModule, TasksModule, AlertsModule, DashboardModule],
+  imports: [
+    MongooseModule.forRoot(
+      'mongodb+srv://gustavo:oliveira18@cluster0.k0nwycg.mongodb.net/?retryWrites=true&w=majority',
+    ),
+    UsersModule,
+    ExpensesModule,
+    RevenuesModule,
+    TasksModule,
+    AlertsModule,
+    DashboardModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
