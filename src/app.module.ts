@@ -8,11 +8,12 @@ import { TasksModule } from './tasks/tasks.module';
 import { AlertsModule } from './alerts/alerts.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
     MongooseModule.forRoot(
-      'mongodb+srv://gustavo:oliveira18@cluster0.k0nwycg.mongodb.net/?retryWrites=true&w=majority',
+      'mongodb+srv://gusleaono1:oliveira18@cluster0.k0nwycg.mongodb.net/?retryWrites=true&w=majority',
     ),
     UsersModule,
     ExpensesModule,
@@ -20,6 +21,7 @@ import { MongooseModule } from '@nestjs/mongoose';
     TasksModule,
     AlertsModule,
     DashboardModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
